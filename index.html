@@ -1,26 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>love card</title>
-	<link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            text-align: center;
+            margin-top: 15%;
+            font-family: Arial, sans-serif;
+        }
+        #prankBtn {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #ff4747;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            position: absolute;
+        }
+        #prankBtn:hover {
+            background-color: #ff0000;
+        }
+    </style>
 </head>
 <body>
-<div class="valentines-day-card">
-  <input id="open" type="checkbox">
-  <label class="open" for="open"></label>
-<div class="card-front">
-  <div class="note">Apne haato se dabaiye</div>
-</div>
-  
-  <div class="card-inside">
-    <div class="text-one">I am  
-    </div>
-    <div class="heart"></div>
-    <div class="smile"></div>
-    <div class="eyes"></div>
-</div>
-</div>
+
+    <h2>Try to Click the Button durga</h2>
+    <button id="prankBtn" onclick="prankClicked()">Click Me!</button>
+
+    <script>
+        const button = document.getElementById('prankBtn');
+
+        button.addEventListener('mouseover', function() {
+            const x = Math.random() * (window.innerWidth - button.clientWidth);
+            const y = Math.random() * (window.innerHeight - button.clientHeight);
+
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        });
+
+        function prankClicked() {
+            alert("Haha! You finally caught me! 😆");
+        }
+    </script>
+
 </body>
 </html>
